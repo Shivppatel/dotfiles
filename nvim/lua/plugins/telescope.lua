@@ -12,6 +12,10 @@ return {
 			vim.keymap.set("n", "<leader>fr", builtin.registers, {})
 			vim.keymap.set("n", "<leader>fkm", builtin.keymaps, {})
 			vim.keymap.set("n", "<leader>fc", builtin.commands, {})
+			vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+			vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
+			vim.keymap.set("n", "gr", builtin.lsp_references, {})
+			vim.keymap.set("n", "go", builtin.lsp_type_definitions, {})
 		end,
 	},
 	{
