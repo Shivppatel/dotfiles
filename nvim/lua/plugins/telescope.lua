@@ -12,6 +12,7 @@ return {
 			vim.keymap.set("n", "<leader>fr", builtin.registers, {})
 			vim.keymap.set("n", "<leader>fkm", builtin.keymaps, {})
 			vim.keymap.set("n", "<leader>fc", builtin.commands, {})
+			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
 			vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
 			vim.keymap.set("n", "gr", builtin.lsp_references, {})
@@ -22,6 +23,20 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
 			require("telescope").setup({
+				pickers = {
+					find_files = {
+						theme = "dropdown",
+					},
+					live_grep = {
+						theme = "dropdown",
+					},
+					grep_string = {
+						theme = "dropdown",
+					},
+					buffers = {
+						theme = "dropdown",
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
