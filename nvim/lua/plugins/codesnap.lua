@@ -6,7 +6,7 @@ return {
 			require("codesnap").setup({
 				save_path = "~/CodeSnapSave",
 				border = "rounded",
-				has_breadcrumbs = true,
+				has_breadcrumbs = false,
 				bg_theme = "grape",
 				watermark = "",
 			})
