@@ -1,6 +1,4 @@
 # dotfiles
-My dotfiles synced form localhost and remote machines
-
 symlink locations
 ```bash
 ~/.tmux.conf
@@ -9,6 +7,7 @@ symlink locations
 ~/.confg/nvim/
 ~/.confg/sketchybar/
 ~/.confg/skhd/
+~/.config/starship/
 ~/.confg/yabai/
 ```
 
