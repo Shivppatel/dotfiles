@@ -4,6 +4,7 @@ My dotfiles synced form localhost and remote machines
 symlink locations
 ```bash
 ~/.tmux.conf
+~/.wezterm.lua
 ~/.confg/alacritty/
 ~/.confg/nvim/
 ~/.confg/sketchybar/
