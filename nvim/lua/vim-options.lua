@@ -1,6 +1,6 @@
-vim.cmd("set tabstop=8")
+vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
--- vim.cmd("set softtabstop=4")
+vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
@@ -17,6 +17,10 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("i", "jj", "<Esc>")
 
+-- Set highlight on search
+vim.o.hlsearch = true
+
+-- Make line numbers default
 vim.wo.number = true
 vim.o.relativenumber = true
 
