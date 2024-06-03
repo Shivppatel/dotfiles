@@ -26,18 +26,18 @@ return {
 				defaults = {
 					layout_strategy = "horizontal",
 					layout_config = {
-						preview_width = 0.65,
 						horizontal = {
+							preview_width = 0.65,
 							size = {
 								width = "95%",
 								height = "95%",
 							},
 						},
 					},
-					pickers = {
-						find_files = {
-							theme = "dropdown",
-						},
+				},
+				pickers = {
+					find_files = {
+						theme = "dropdown",
 					},
 				},
 				extensions = {
