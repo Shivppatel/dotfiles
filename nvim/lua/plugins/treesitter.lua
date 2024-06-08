@@ -28,7 +28,6 @@ return {
 				"python",
 				"query",
 				"rust",
-				"svelte",
 				"sql",
 				"typescript",
 				"tsx",
