@@ -12,6 +12,9 @@ return {
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.google_java_format,
 				null_ls.builtins.formatting.clang_format,
+                null_ls.builtins.formatting.gofumpt,
+                null_ls.builtins.formatting.goimports_reviser,
+                null_ls.builtins.formatting.golines,
 				null_ls.builtins.diagnostics.checkstyle.with({
 					extra_args = { "-c", "/google_checks.xml" },
 				}),
