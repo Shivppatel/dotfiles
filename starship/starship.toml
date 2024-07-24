@@ -1,63 +1,290 @@
-add_newline = false
-# A minimal left prompt
-format = """$directory$character"""
-palette = "catppuccin_mocha"
-# move the rest of the prompt to the right
-right_format = """$all"""
-command_timeout = 1000
+format = """
+$cmd_duration\
+$hostname\
+$localip\
+$shlvl\
+$shell\
+$env_var\
+$username\
+$sudo\
+$character\
+"""
 
-[git_branch]
-format =  '[$symbol$branch(:$remote_branch)]($style)'
+right_format = """
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$openstack\
+$crystal\
+$custom\
+$jobs\
+$status\
+$os\
+$container\
+"""
 
-[git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
-cherry_pick = '[🍒 PICKING](bold red)'
+add_newline = true
 
-[aws]
-format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
-disabled = true
-style = 'bold blue'
-symbol = " "
+[character]
+format = "$symbol "
+success_symbol = "[◉](bold italic bright-green)"
+error_symbol = "[⊘](italic purple)"
 
-[golang]
-format = 'via [ $version](bold cyan) '
+[env_var.VIMSHELL] # vim subshell
+format = "[$env_value]($style)"
+style = 'green italic'
 
-[kubernetes]
-symbol = '☸ '
+[sudo]
+format = "[$symbol]($style)"
+style = "italic bright-purple"
+symbol = "◇┈"
 disabled = false
-detect_files = ['Dockerfile']
-format = '[$symbol$context( \($namespace\))]($style) '
-contexts = [
-  { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "green", context_alias = "shivppatel", symbol = " " },
-]
+
+[username]
+style_user = "yellow bold"
+style_root = "purple bold italic"
+format = "[$user]($style) ▻ "
+disabled = false
+
+[directory]
+home_symbol = "⌂"
+truncation_length = 2
+truncation_symbol = "…/"
+read_only = " 󰌾"
+style = "italic blue"
+format = ' [$path]($style)[$read_only]($read_only_style)'
+
+[cmd_duration]
+min_time = 500
+format = "[$duration ](italic bright-blue)"
+
+[jobs]
+format = "[ $symbol$number]($style)"
+style = "white"
+symbol = "[▶ ](blue italic)"
+
+[localip]
+ssh_only = true
+format = " ◯[$localipv4](bold magenta)"
+disabled = false
+
+[deno]
+format = " deno [∫ $version](blue italic)"
+version_format = "${major}.${minor}"
+
+[kotlin]
+symbol = " "
+
+[lua]
+format = " lua [${symbol}${version}]($style)"
+symbol = " "
+style = "italic bright-yellow"
+
+[nodejs]
+format = " node [◫ ($version)](italic bright-green)"
+symbol = " "
+detect_files = ["package-lock.json", "yarn.lock"]
+version_format = "${major}.${minor}"
+
+[python]
+format = " py [${symbol}${version}]($style)"
+symbol = " "
+version_format = "${major}.${minor}"
+style = "italic bright-yellow"
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+format = " rb [${symbol}${version}]($style)"
+symbol = " "
+version_format = "${major}.${minor}"
+style = "italic red"
+
+[rust]
+format = " rs [$symbol$version]($style)"
+symbol = " "
+version_format = "${major}.${minor}"
+style = "italic red"
+
+[package]
+format = " pkg [$symbol$version]($style)"
+version_format = "${major}.${minor}"
+symbol = "󰏗 "
+style = "bright-yellow italic"
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[swift]
+format = " sw [${symbol}${version}]($style)"
+symbol = " "
+style = "italic bright-red"
+version_format = "${major}.${minor}"
+
+[buf]
+symbol = " "
+format = " buf [$symbol $version $buf_version]($style)"
+
+[c]
+symbol = " "
+format = " c [$symbol($version(-$name))]($style)"
+
+[conda]
+symbol = " "
+format = " conda [$symbol$environment]($style)"
+
+[dart]
+symbol = " "
+format = " dart [$symbol($version )]($style)"
 
 [docker_context]
-disabled = true
+symbol = " "
+format = " docker [$symbol$context]($style)"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[elixir]
+symbol = " "
+format = " exs [$symbol $version OTP $otp_version ]($style)"
+
+[elm]
+symbol = " "
+format = " elm [$symbol($version )]($style)"
+
+[golang]
+symbol = " "
+format = " go [$symbol($version )]($style)"
+
+[haskell]
+symbol = " "
+format = " hs [$symbol($version )]($style)"
+
+[java]
+symbol = " "
+format = " java [${symbol}(${version} )]($style)"
+
+[julia]
+symbol = " "
+format = " jl [$symbol($version )]($style)"
+
+[memory_usage]
+symbol = "󰍛 "
+format = " mem [${ram}( ${swap})]($style)"
+
+[nim]
+symbol = "󰆥 "
+format = " nim [$symbol($version )]($style)"
+
+[nix_shell]
+symbol = " "
+format = " nix [$symbol$state $name]($style)"
+
+[ocaml]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
