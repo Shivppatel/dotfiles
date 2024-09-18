@@ -8,6 +8,7 @@ return {
 		null_ls.setup({
 			sources = {
 				require("none-ls.diagnostics.eslint_d"),
+				-- null_ls.builtins.completion.luasnip,
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.gofumpt,
 				null_ls.builtins.formatting.google_java_format,

@@ -21,7 +21,6 @@ return {
 			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"hrsh7th/cmp-path",
 			"onsails/lspkind.nvim",
-			"kristijanhusak/vim-dadbod-completion",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -36,14 +35,8 @@ return {
 				},
 				formatting = {
 					format = lspkind.cmp_format({
-						mode = "text_symbol",
 						maxwidth = 50,
 						ellipsis_char = "...",
-						show_labelDetails = true,
-
-						before = function(entry, vim_item)
-							return vim_item
-						end,
 					}),
 				},
 				window = {
@@ -60,10 +53,8 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "vim-dadbod-completion" },
-					{ name = "codeium" },
-					{ name = "path" },
 					{ name = "buffer" },
+					{ name = "path" },
 				}),
 			})
 		end,
