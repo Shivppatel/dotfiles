@@ -13,6 +13,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "ansiblels",
+                    "bashls",
                     "lua_ls",
                     "gopls",
                     "helm_ls",
@@ -40,6 +41,9 @@ return {
             local lspconfig = require("lspconfig")
 
             lspconfig.ansiblels.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.bashls.setup({
                 capabilities = capabilities,
             })
             lspconfig.gopls.setup({
