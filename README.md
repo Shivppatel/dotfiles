@@ -1,6 +1,6 @@
 # dotfiles
 
-![image](https://github.com/Shivppatel/dotfiles/assets/42050563/591e5e2e-5265-4574-a2de-5c32d63d57e1)
+<img width="1777" alt="image" src="https://github.com/user-attachments/assets/6c8c7a64-d779-4a0f-8652-e4f6f48e2663" />
 
 This repository houses my custom configurations for the following software applications:
 
