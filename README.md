@@ -8,7 +8,6 @@ This repository houses my custom configurations for the following software appli
 2. [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
 3. [Tmux](https://github.com/tmux/tmux) - Versatile terminal multiplexer.
 4. [Ghostty](https://ghostty.org/) - Cross-platform terminal emulator.
-5. [Raycast](https://www.raycast.com) = A collection of powerful productivity tools all within an extendable launcher.
 
 ### Symlink locations (macOS)
 
