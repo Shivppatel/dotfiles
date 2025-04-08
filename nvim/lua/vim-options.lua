@@ -33,3 +33,12 @@ vim.o.smartcase = true
 
 -- Set splitright option
 vim.opt.splitright = true
+
+-- CodeCompanion
+vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-p>", ":CodeCompanionChat Toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<CR>", { noremap = true, silent = true })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
