@@ -17,5 +17,6 @@ This repository houses my custom configurations for the following software appli
 ~/.confg/atuin/
 ~/.confg/nvim/
 ~/.confg/zed/
+~/.p10k.zsh
 ~/.tmux.conf
 ```
