@@ -9,14 +9,12 @@ This repository houses my custom configurations for the following software appli
 3. [Maccy](https://github.com/p0deje/Maccy) - Lightweight clipboard manager for macOS
 4. [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
 5. [Tmux](https://github.com/tmux/tmux) - Versatile terminal multiplexer.
-6. [Zed](https://github.com/zed-industries/zed) - code editor that just works.
 
 ### Symlink locations (macOS)
 
 ```bash
 ~/.confg/atuin/
 ~/.confg/nvim/
-~/.confg/zed/
 ~/.p10k.zsh
 ~/.tmux.conf
 ```
