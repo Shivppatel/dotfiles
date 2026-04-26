@@ -4,17 +4,22 @@
 
 This repository houses my custom configurations for the following software applications:
 
-1. [Atuin](https://github.com/atuinsh/atuin) - A shell history replacement with a focus on searchability and synchronization.
+1. [Atuin](https://github.com/atuinsh/atuin) - Shell history replacement with a focus on searchability and synchronization.
+1. [Cmux](https://github.com/manaflow-ai/cmux) - Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents
 2. [Ghostty](https://ghostty.org/) - Cross-platform terminal emulator.
 3. [Maccy](https://github.com/p0deje/Maccy) - Lightweight clipboard manager for macOS
 4. [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
-5. [Tmux](https://github.com/tmux/tmux) - Versatile terminal multiplexer.
+5. [Nushell](https://www.nushell.sh/) - Modern shell for the GitHub era.
+6. [Starship](https://starship.rs/) - The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+7. [Tmux](https://github.com/tmux/tmux) - Versatile terminal multiplexer.
 
 ### Symlink locations (macOS)
 
 ```bash
-~/.confg/atuin/
-~/.confg/nvim/
-~/.p10k.zsh
+~/.config/atuin/
+~/.config/cmux/settings.json
+~/.config/nushell/
+~/.config/nvim/
+~/.config/starship.toml
 ~/.tmux.conf
 ```
