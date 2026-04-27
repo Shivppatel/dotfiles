@@ -1,63 +1,59 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPre", "BufNewFile" },
+		branch = "main",
+		lazy = false,
 		build = ":TSUpdate",
 		dependencies = {
 			"windwp/nvim-ts-autotag",
 		},
 		config = function()
-			local configs = require("nvim-treesitter.configs")
-			configs.setup({
-				ensure_installed = {
-					"bash",
+			local install_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "ts-main")
+			local ts = require("nvim-treesitter")
+
+			ts.setup({
+				install_dir = install_dir,
+			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = {
+					"c",
+					"cpp",
 					"css",
 					"csv",
-					"cpp",
 					"dockerfile",
-					"graphql",
 					"go",
 					"gotmpl",
+					"graphql",
 					"haskell",
-                    "hcl",
-                    "helm",
+					"hcl",
+					"helm",
 					"html",
 					"htmldjango",
 					"java",
 					"javascript",
+					"javascriptreact",
 					"json",
-					"latex",
 					"lua",
 					"make",
 					"markdown",
-					"markdown_inline",
 					"ocaml",
 					"prisma",
 					"python",
 					"query",
 					"rust",
-                    "scala",
+					"scala",
+					"sh",
 					"sql",
 					"terraform",
 					"typescript",
-					"tsx",
+					"typescriptreact",
 					"vim",
-					"vimdoc",
 					"yaml",
 				},
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<C-space>",
-						node_incremental = "<C-space>",
-						scope_incremental = false,
-						node_decremental = "<bs>",
-					},
-				},
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+				end,
 			})
 		end,
 	},
