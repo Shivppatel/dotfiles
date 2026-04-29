@@ -48,7 +48,9 @@ return {
 					"terraform",
 					"typescript",
 					"typescriptreact",
+					"toml",
 					"vim",
+					"vimdoc",
 					"yaml",
 				},
 				callback = function(args)
