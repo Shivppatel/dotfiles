@@ -1,0 +1,16 @@
+k9s:
+  cluster: kubernetes
+  namespace:
+    active: datadog
+    lockFavorites: false
+    favorites:
+      - datadog
+      - observability
+      - all
+      - default
+      - jellyfin
+  view:
+    active: apps/v1/daemonsets all
+  featureGates:
+    nodeShell: false
+  proxy: null

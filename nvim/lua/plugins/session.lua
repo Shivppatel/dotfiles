@@ -8,7 +8,21 @@ return {
 	},
 	opts = {
 		log_level = "error",
-		auto_session_suppress_dirs = {
+		auto_restore = false,
+		bypass_save_filetypes = {
+			"snacks_dashboard",
+			"oil",
+		},
+		pre_save_cmds = {
+			function()
+				for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+					if vim.bo[bufnr].filetype == "oil" then
+						vim.api.nvim_buf_delete(bufnr, { force = true })
+					end
+				end
+			end,
+		},
+		suppressed_dirs = {
 			"~/",
 			"~/Downloads",
 			"/",
