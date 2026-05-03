@@ -16,7 +16,7 @@ k9s:
   # Default port forward host
   portForwardAddress: localhost
   ui: # NOTE! [K9s v0.30.0]
-    skin: catppuccin-mocha
+    skin: tokyonight-night
     # Enable mouse support. Default false
     enableMouse: false
     # Set to true to hide K9s header. Default false

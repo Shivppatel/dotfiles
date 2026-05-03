@@ -3,17 +3,19 @@
 [directory]
 truncation_length = 8
 truncation_symbol = '…/'
+style = "#7dcfff bold"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[❯](#bb9af7)"
+error_symbol = "[❯](#f7768e)"
+vimcmd_symbol = "[❮](#9ece6a)"
 
 [container]
 format = '[$symbol \[$name\]]($style) '
+style = "#f7768e bold dimmed"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "bright-black"
+style = "#565f89"
 detect_extensions = []
 detect_files = []
