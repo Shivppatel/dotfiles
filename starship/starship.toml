@@ -1,21 +1,81 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+format = "$directory$git_branch$git_status$kubernetes$custom$container$python$jobs$cmd_duration$status$line_break$character"
+add_newline = true
+command_timeout = 500
 
 [directory]
 truncation_length = 8
 truncation_symbol = '…/'
-style = "#7dcfff bold"
+style = "#7dcfff"
+read_only = " ro"
+read_only_style = "#f7768e"
 
 [character]
-success_symbol = "[❯](#bb9af7)"
+success_symbol = "[❯](#7aa2f7)"
 error_symbol = "[❯](#f7768e)"
 vimcmd_symbol = "[❮](#9ece6a)"
 
+[git_branch]
+format = "[on](#565f89) [$branch]($style) "
+style = "#bb9af7"
+symbol = ""
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "#e0af68"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "x"
+
+[kubernetes]
+disabled = false
+format = "[k8s:$context(/$namespace)]($style) "
+style = "#7aa2f7"
+
+[aws]
+disabled = true
+
+[custom.aws_profile]
+when = '''
+[ -n "$AWS_PROFILE$AWS_DEFAULT_PROFILE$AWS_REGION$AWS_DEFAULT_REGION" ] ||
+[ -f "$HOME/.aws/config" ] ||
+[ -f "$HOME/.aws/credentials" ]
+'''
+command = '''
+printf "%s" "${AWS_PROFILE:-${AWS_DEFAULT_PROFILE:-default}}"
+'''
+format = "[on](#565f89) [☁ $output]($style) "
+style = "#e0af68"
+
 [container]
 format = '[$symbol \[$name\]]($style) '
-style = "#f7768e bold dimmed"
+style = "#f7768e dimmed"
 
 [python]
 format = "[$virtualenv]($style) "
 style = "#565f89"
 detect_extensions = []
 detect_files = []
+
+[jobs]
+format = "[$symbol$number]($style) "
+symbol = "+"
+style = "#9ece6a"
+
+[cmd_duration]
+min_time = 3000
+format = "[took $duration]($style) "
+style = "#e0af68"
+
+[status]
+disabled = false
+format = "[exit:$status]($style) "
+style = "#f7768e"
+map_symbol = false

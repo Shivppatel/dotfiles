@@ -22,7 +22,7 @@ k9s:
       filterColor: "#9ece6a"
     border:
       fgColor: "#3b4261"
-      focusColor: "#7aa2f7"
+      focusColor: "#565f89"
     menu:
       fgColor: "#c0caf5"
       keyColor: "#7aa2f7"
@@ -47,9 +47,9 @@ k9s:
     table:
       fgColor: "#c0caf5"
       bgColor: "#1a1b26"
-      cursorFgColor: "#16161e"
-      cursorBgColor: "#3b4261"
-      markColor: "#bb9af7"
+      cursorFgColor: "#15161e"
+      cursorBgColor: "#7aa2f7"
+      markColor: "#7aa2f7"
       header:
         fgColor: "#e0af68"
         bgColor: "#1a1b26"
@@ -57,8 +57,8 @@ k9s:
     xray:
       fgColor: "#c0caf5"
       bgColor: "#1a1b26"
-      cursorColor: "#3b4261"
-      cursorTextColor: "#16161e"
+      cursorColor: "#7aa2f7"
+      cursorTextColor: "#15161e"
       graphicColor: "#bb9af7"
     charts:
       bgColor: "#1a1b26"
@@ -94,7 +94,7 @@ k9s:
     bgColor: "#16161e"
     buttonFgColor: "#c0caf5"
     buttonBgColor: "#3b4261"
-    buttonFocusFgColor: "#16161e"
+    buttonFocusFgColor: "#15161e"
     buttonFocusBgColor: "#7aa2f7"
     labelFgColor: "#bb9af7"
     fieldFgColor: "#c0caf5"
