@@ -1,16 +1,20 @@
 k9s:
   cluster: kubernetes
   namespace:
-    active: datadog
+    active: argocd
     lockFavorites: false
     favorites:
+      - radar
+      - emqx
+      - postgresql
+      - vault
       - datadog
       - observability
       - all
       - default
-      - jellyfin
+      - argocd
   view:
-    active: apps/v1/daemonsets all
+    active: v1/pods argocd
   featureGates:
     nodeShell: false
   proxy: null
